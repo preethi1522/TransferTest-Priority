@@ -1,0 +1,17 @@
+defect_id,module,feature,defect_description,severity
+H-001,Transfers,Daily transfer limit,Earlier regression issue in daily transfer limit affecting successful standard journey.,4
+H-002,Transfers,Daily transfer limit,Earlier regression issue in daily transfer limit affecting value above allowed threshold.,4
+H-003,Transfers,Daily transfer limit,Earlier regression issue in daily transfer limit affecting network interruption and retry.,4
+H-004,Transfers,Monthly transfer limit,Earlier regression issue in monthly transfer limit affecting successful standard journey.,4
+H-005,Transfers,Monthly transfer limit,Earlier regression issue in monthly transfer limit affecting value above allowed threshold.,4
+H-006,Transfers,PayNow mobile transfer,Earlier regression issue in paynow mobile transfer affecting successful standard journey.,4
+H-007,Transfers,PayNow mobile transfer,Earlier regression issue in paynow mobile transfer affecting value above allowed threshold.,4
+H-008,Transfers,PayNow NRIC transfer,Earlier regression issue in paynow nric transfer affecting successful standard journey.,4
+H-009,Transfers,Other bank transfer,Earlier regression issue in other bank transfer affecting successful standard journey.,4
+H-010,Transfers,Own account transfer,Earlier regression issue in own account transfer affecting successful standard journey.,4
+H-011,Payees,Add bank payee,Earlier regression issue in add bank payee affecting valid details accepted.,4
+H-012,Payees,Add PayNow payee,Earlier regression issue in add paynow payee affecting valid details accepted.,4
+H-013,Login,Customer login,Earlier regression issue in customer login affecting valid credentials.,4
+H-014,Cards,Card payment,Earlier regression issue in card payment affecting successful payment.,4
+H-015,Cards,Card limit,Earlier regression issue in card limit affecting successful standard journey.,4
+H-016,Cards,Card lock,Earlier regression issue in card lock affecting lock active card.,4

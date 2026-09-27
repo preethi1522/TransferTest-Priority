@@ -1,0 +1,101 @@
+test_id,module,feature,test_description,business_impact,existing_severity
+TC-001,Transfers,Daily transfer limit,Verify daily transfer limit: successful standard journey.,5,4
+TC-002,Transfers,Daily transfer limit,Verify daily transfer limit: boundary value exactly at threshold.,5,5
+TC-003,Transfers,Daily transfer limit,Verify daily transfer limit: value above allowed threshold.,5,5
+TC-004,Transfers,Daily transfer limit,Verify daily transfer limit: invalid details rejected.,5,5
+TC-005,Transfers,Daily transfer limit,Verify daily transfer limit: network interruption and retry.,5,5
+TC-006,Transfers,Daily transfer limit,Verify daily transfer limit: duplicate request prevention.,5,5
+TC-007,Transfers,Daily transfer limit,Verify daily transfer limit: newly enrolled user journey.,5,4
+TC-008,Transfers,Daily transfer limit,Verify daily transfer limit: existing user journey.,5,4
+TC-009,Transfers,Monthly transfer limit,Verify monthly transfer limit: successful standard journey.,4,3
+TC-010,Transfers,Monthly transfer limit,Verify monthly transfer limit: boundary value exactly at threshold.,4,4
+TC-011,Transfers,Monthly transfer limit,Verify monthly transfer limit: value above allowed threshold.,4,5
+TC-012,Transfers,Monthly transfer limit,Verify monthly transfer limit: invalid details rejected.,4,4
+TC-013,Transfers,Monthly transfer limit,Verify monthly transfer limit: network interruption and retry.,4,4
+TC-014,Transfers,Monthly transfer limit,Verify monthly transfer limit: duplicate request prevention.,4,4
+TC-015,Transfers,Monthly transfer limit,Verify monthly transfer limit: newly enrolled user journey.,4,3
+TC-016,Transfers,Monthly transfer limit,Verify monthly transfer limit: existing user journey.,4,3
+TC-017,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: successful standard journey.,5,4
+TC-018,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: boundary value exactly at threshold.,5,5
+TC-019,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: value above allowed threshold.,5,5
+TC-020,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: invalid details rejected.,5,5
+TC-021,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: network interruption and retry.,5,5
+TC-022,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: duplicate request prevention.,5,5
+TC-023,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: newly enrolled user journey.,5,4
+TC-024,Transfers,PayNow mobile transfer,Verify PayNow mobile transfer: existing user journey.,5,4
+TC-025,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: successful standard journey.,4,3
+TC-026,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: boundary value exactly at threshold.,4,4
+TC-027,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: value above allowed threshold.,4,5
+TC-028,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: invalid details rejected.,4,4
+TC-029,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: network interruption and retry.,4,4
+TC-030,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: duplicate request prevention.,4,4
+TC-031,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: newly enrolled user journey.,4,3
+TC-032,Transfers,PayNow NRIC transfer,Verify PayNow NRIC transfer: existing user journey.,4,3
+TC-033,Transfers,Other bank transfer,Verify other bank transfer: successful standard journey.,5,4
+TC-034,Transfers,Other bank transfer,Verify other bank transfer: boundary value exactly at threshold.,5,5
+TC-035,Transfers,Other bank transfer,Verify other bank transfer: value above allowed threshold.,5,5
+TC-036,Transfers,Other bank transfer,Verify other bank transfer: invalid details rejected.,5,5
+TC-037,Transfers,Other bank transfer,Verify other bank transfer: network interruption and retry.,5,5
+TC-038,Transfers,Other bank transfer,Verify other bank transfer: duplicate request prevention.,5,5
+TC-039,Transfers,Other bank transfer,Verify other bank transfer: newly enrolled user journey.,5,4
+TC-040,Transfers,Other bank transfer,Verify other bank transfer: existing user journey.,5,4
+TC-041,Transfers,Own account transfer,Verify own account transfer: successful standard journey.,4,3
+TC-042,Transfers,Own account transfer,Verify own account transfer: boundary value exactly at threshold.,4,4
+TC-043,Transfers,Own account transfer,Verify own account transfer: value above allowed threshold.,4,5
+TC-044,Transfers,Own account transfer,Verify own account transfer: invalid details rejected.,4,4
+TC-045,Transfers,Own account transfer,Verify own account transfer: network interruption and retry.,4,4
+TC-046,Transfers,Own account transfer,Verify own account transfer: duplicate request prevention.,4,4
+TC-047,Transfers,Own account transfer,Verify own account transfer: newly enrolled user journey.,4,3
+TC-048,Transfers,Own account transfer,Verify own account transfer: existing user journey.,4,3
+TC-049,Payees,Add bank payee,Verify add bank payee: valid details accepted.,4,3
+TC-050,Payees,Add bank payee,Verify add bank payee: duplicate payee rejected.,4,4
+TC-051,Payees,Add bank payee,Verify add bank payee: invalid identifier rejected.,4,4
+TC-052,Payees,Add bank payee,Verify add bank payee: confirmation required.,4,3
+TC-053,Payees,Add bank payee,Verify add bank payee: network failure before saving.,4,4
+TC-054,Payees,Add bank payee,Verify add bank payee: payee available after approval.,4,3
+TC-055,Payees,Add bank payee,Verify add bank payee: unauthorised addition blocked.,4,5
+TC-056,Payees,Add bank payee,Verify add bank payee: details persist after login.,4,3
+TC-057,Payees,Add PayNow payee,Verify add PayNow payee: valid details accepted.,4,3
+TC-058,Payees,Add PayNow payee,Verify add PayNow payee: duplicate payee rejected.,4,4
+TC-059,Payees,Add PayNow payee,Verify add PayNow payee: invalid identifier rejected.,4,4
+TC-060,Payees,Add PayNow payee,Verify add PayNow payee: confirmation required.,4,3
+TC-061,Payees,Add PayNow payee,Verify add PayNow payee: network failure before saving.,4,4
+TC-062,Payees,Add PayNow payee,Verify add PayNow payee: payee available after approval.,4,3
+TC-063,Payees,Add PayNow payee,Verify add PayNow payee: unauthorised addition blocked.,4,5
+TC-064,Payees,Add PayNow payee,Verify add PayNow payee: details persist after login.,4,3
+TC-065,Login,Customer login,Verify customer login: valid credentials.,5,4
+TC-066,Login,Customer login,Verify customer login: invalid password rejected.,5,5
+TC-067,Login,Customer login,Verify customer login: locked user blocked.,5,5
+TC-068,Login,Customer login,Verify customer login: expired session requires sign-in.,5,4
+TC-069,Login,Customer login,Verify customer login: new device verification.,5,4
+TC-070,Login,Customer login,Verify customer login: retry after network failure.,5,5
+TC-071,Login,Customer login,Verify customer login: sign-out invalidates session.,5,5
+TC-072,Login,Customer login,Verify customer login: biometric failure fallback.,5,4
+TC-073,Cards,Card payment,Verify card payment: successful payment.,5,4
+TC-074,Cards,Card payment,Verify card payment: insufficient funds rejected.,5,4
+TC-075,Cards,Card payment,Verify card payment: duplicate charge prevented.,5,5
+TC-076,Cards,Card payment,Verify card payment: network retry.,5,5
+TC-077,Cards,Card payment,Verify card payment: declined payment.,5,4
+TC-078,Cards,Card payment,Verify card payment: refund display.,5,4
+TC-079,Cards,Card payment,Verify card payment: payment after card lock rejected.,5,4
+TC-080,Cards,Card payment,Verify card payment: transaction alert generated.,5,4
+TC-081,Cards,Card limit,Verify card spending limit: successful standard journey.,4,3
+TC-082,Cards,Card limit,Verify card spending limit: boundary value exactly at threshold.,4,4
+TC-083,Cards,Card limit,Verify card spending limit: value above allowed threshold.,4,5
+TC-084,Cards,Card limit,Verify card spending limit: invalid details rejected.,4,4
+TC-085,Cards,Card limit,Verify card spending limit: network interruption and retry.,4,4
+TC-086,Cards,Card limit,Verify card spending limit: duplicate request prevention.,4,4
+TC-087,Cards,Card limit,Verify card spending limit: newly enrolled user journey.,4,3
+TC-088,Cards,Card limit,Verify card spending limit: existing user journey.,4,3
+TC-089,Cards,Card lock,Verify card lock and unlock: lock active card.,4,3
+TC-090,Cards,Card lock,Verify card lock and unlock: unlock locked card.,4,4
+TC-091,Cards,Card lock,Verify card lock and unlock: payment rejected while locked.,4,5
+TC-092,Cards,Card lock,Verify card lock and unlock: duplicate lock request.,4,4
+TC-093,Cards,Card lock,Verify card lock and unlock: network failure during lock.,4,4
+TC-094,Cards,Card lock,Verify card lock and unlock: card status persists after login.,4,3
+TC-095,Cards,Card lock,Verify card lock and unlock: invalid card rejected.,4,4
+TC-096,Cards,Card lock,Verify card lock and unlock: status refresh after unlock.,4,3
+TC-097,Appearance,Theme,Verify app theme: switch between light and dark.,1,1
+TC-098,Appearance,Theme,Verify app theme: retain preference after login.,1,2
+TC-099,Appearance,Theme,Verify app theme: show readable transfer confirmation.,1,2
+TC-100,Appearance,Theme,Verify app theme: display correctly after app restart.,1,1

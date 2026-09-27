@@ -1,0 +1,31 @@
+# TransferTest Priority: Banking Regression Test Recommendations
+
+## Problem and user
+
+I address a release-planning problem for a banking QA lead who has a large regression suite but limited time before a release. My fictional example contains 100 test cases across transfers, login, payees, cards and app appearance. The demonstration release changes the daily transfer limit calculation and mentions PayNow. The QA lead needs a defensible shortlist of 20 tests to run first. This is a decision-support tool: it cannot approve a release, execute tests, or predict actual production incidents. The 100-case constraint is an experiment design assumption, not a measured workload at a named bank.
+
+## Design and trade-offs
+
+I built the data generator, Colab ranking workflow, evaluation and safeguards in Python. The first version takes one release description, reads fictional test cases and earlier fictional defects, and outputs exactly 20 ranked tests for QA review. A non-AI baseline simply sorts tests by their existing severity score (5 is highest). The alternative uses TF-IDF text similarity to match the release change to tests (65% of the score), similarity to same-feature historical defect text (20%), and business impact (15%). These weights were engineering choices; this small synthetic evaluation does not establish that they are optimal. TF-IDF is a lightweight statistical text model, not an LLM or a trained defect predictor.
+
+I also rented `openai/gpt-4o-mini` via OpenRouter to draft explanations for five selected tests. A structured JSON response lists each test ID, a short reason and optional past-defect IDs. My Python code rejects unknown IDs, but a valid ID alone does not prove that the cited record supports the claim. The LLM does not calculate the score or decide whether to deploy. I used Python/Colab rather than UiPath because I needed transparent ranking, reproducible evaluation and a portable GitHub notebook. I did not use an autonomous agent: the task follows a fixed read → rank → explain → review sequence and needs no model-directed loop or tool actions. A full RAG system or trained risk model would need a stronger document corpus or labelled real cases; the small prototype does not justify those costs and risks.
+
+For this prototype I own the data, ranking rules, notebook, evaluation and review gate; I rent Colab computation and an external LLM API for optional explanations. Real bank data would require authorised access, handling rules and appropriate residency review. No real customer records are used here.
+
+## Data and evaluation
+
+The repository includes `make_data.py` and three generated CSV files. `test_cases.csv` contains 100 selectable tests; `past_defects.csv` contains 16 earlier fictional issues visible to the ranking workflow. The release-specific `answer_key.csv` contains 20 fictional critical failure-to-test links (severity 5), withheld until after ranking. The answer key is an evaluation sheet, not an input or an exact required priority order. The test and defect descriptions require domain review because synthetic cases can omit real banking rules.
+
+My primary metric is **critical-defect link coverage@20**: of the 20 answer-key links, how many have their linked test among the first 20? The severity-only baseline scored **10/20 (50%)**, and the change-aware method also scored **10/20 (50%)** on this example release. Thus the change-aware approach did **not** beat the baseline or reach the originally proposed 90% target. A linked test being selected is not the same as executing it or finding a real defect. Only one release was evaluated; there is no independent bank data or independently authored holdout, so these figures do not estimate production performance. I inspected the missed PayNow-linked tests rather than claiming the result was a success.
+
+The first answer-key defect descriptions repeated their test scenarios. After the initial run, I revised the descriptions into distinct fictional failure narratives while keeping all 20 defect-to-test links unchanged. This revision and the fact that the cases were constructed for this individual project limit the strength of the evaluation. Before deployment I would ask another QA analyst to label unseen release scenarios, freeze those labels before testing, and assess results by transfer type and failure mode.
+
+## Cost, risks and controls
+
+For one measured call explaining **five** selected tests, OpenRouter reported **391 input tokens**, **269 output tokens**, **4.36 seconds** and **US$0.00022005** API cost. This is a measured five-test explanation cost, not an observed cost to explain all 20 or an all-in banking release cost. The offline ranking has no per-request model API fee, but staff review and operating costs remain. A future business case would include time for QA review, failed calls and repeated runs; prices must be checked when deployed.
+
+The most dangerous silent failure is a plausible-looking shortlist that omits a critical transfer test. I cap the automated list at 20, show missed links during offline evaluation, and require QA approval before use. An unclear release description triggers a review flag when its maximum text match is below the prototype threshold of 0.08; that threshold is uncalibrated and needs evaluation on additional releases. LLM explanations are checked for valid test and evidence IDs, and a person checks whether their words really match those records. No recommendation can trigger testing, deployment or rollback automatically. Intended use is an internal QA planning draft; it should not be used to claim real defect detection, to make customer decisions, or to publish actual bank incidents.
+
+## Demonstration and conclusion
+
+In the video I will show the fictional transfer-change input, 100-case data load, severity baseline, change-aware top 20, the 10/20 versus 10/20 comparison, one missed test, the review message and five LLM explanations with measured usage. The demonstration supports a narrow conclusion: this workflow runs end to end and produces reviewable recommendations, but the tested ranking did not improve coverage over the simpler baseline. The next iteration needs independently reviewed data and multiple frozen release cases before making any claim of operational value.

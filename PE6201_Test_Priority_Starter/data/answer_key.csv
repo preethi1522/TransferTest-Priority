@@ -1,0 +1,21 @@
+release_id,eval_defect_id,test_id,defect_severity,defect_description,scenario
+REL-TRANSFER-01,E-001,TC-002,5,"Transfer of exactly S$1,000 is wrongly blocked when the daily cap is S$1,000.",Verify daily transfer limit: boundary value exactly at threshold.
+REL-TRANSFER-01,E-002,TC-003,5,Transfer above the daily cap goes through instead of being stopped.,Verify daily transfer limit: value above allowed threshold.
+REL-TRANSFER-01,E-003,TC-004,5,Malformed transfer account number passes validation and reaches confirmation.,Verify daily transfer limit: invalid details rejected.
+REL-TRANSFER-01,E-004,TC-006,5,Double tapping Submit creates two separate transfers and debits twice.,Verify daily transfer limit: duplicate request prevention.
+REL-TRANSFER-01,E-005,TC-007,5,New customer receives the wrong default daily transfer cap.,Verify daily transfer limit: newly enrolled user journey.
+REL-TRANSFER-01,E-006,TC-010,5,Transfer exactly at the monthly cap is wrongly rejected.,Verify monthly transfer limit: boundary value exactly at threshold.
+REL-TRANSFER-01,E-007,TC-012,5,Invalid monthly limit amount is accepted during a transfer.,Verify monthly transfer limit: invalid details rejected.
+REL-TRANSFER-01,E-008,TC-014,5,Retrying a monthly-capped payment results in two debits.,Verify monthly transfer limit: duplicate request prevention.
+REL-TRANSFER-01,E-009,TC-018,5,PayNow transfer exactly at the daily cap is incorrectly rejected.,Verify PayNow mobile transfer: boundary value exactly at threshold.
+REL-TRANSFER-01,E-010,TC-019,5,PayNow mobile transfer exceeds the permitted daily cap.,Verify PayNow mobile transfer: value above allowed threshold.
+REL-TRANSFER-01,E-011,TC-020,5,Malformed mobile number is accepted as a PayNow recipient.,Verify PayNow mobile transfer: invalid details rejected.
+REL-TRANSFER-01,E-012,TC-021,5,"After a network timeout the PayNow transfer posts, but the app shows failure.",Verify PayNow mobile transfer: network interruption and retry.
+REL-TRANSFER-01,E-013,TC-022,5,Retry after a PayNow timeout debits the account twice.,Verify PayNow mobile transfer: duplicate request prevention.
+REL-TRANSFER-01,E-014,TC-023,5,Newly enrolled customer is given a PayNow cap meant for established users.,Verify PayNow mobile transfer: newly enrolled user journey.
+REL-TRANSFER-01,E-015,TC-025,5,PayNow NRIC transfer fails despite valid recipient and sufficient funds.,Verify PayNow NRIC transfer: successful standard journey.
+REL-TRANSFER-01,E-016,TC-026,5,PayNow NRIC transfer exactly at the limit is wrongly blocked.,Verify PayNow NRIC transfer: boundary value exactly at threshold.
+REL-TRANSFER-01,E-017,TC-027,5,PayNow NRIC transfer above the daily cap is allowed.,Verify PayNow NRIC transfer: value above allowed threshold.
+REL-TRANSFER-01,E-018,TC-028,5,Invalid NRIC recipient reference is accepted without validation.,Verify PayNow NRIC transfer: invalid details rejected.
+REL-TRANSFER-01,E-019,TC-030,5,Repeated PayNow NRIC confirmation sends the transfer twice.,Verify PayNow NRIC transfer: duplicate request prevention.
+REL-TRANSFER-01,E-020,TC-031,5,Newly enrolled customer's PayNow NRIC transfer skips the lower onboarding limit.,Verify PayNow NRIC transfer: newly enrolled user journey.
