@@ -1,5 +1,4 @@
-# Banking Regression Test Priority — working draft
-
+# TransferTest Priority: Banking Regression Test Recommendations
 Individual PE6201 prototype by Preethi. All data is fictional. The dataset and labels are **drafts for domain review**, not validated banking evidence.
 
 ## Run in Google Colab
